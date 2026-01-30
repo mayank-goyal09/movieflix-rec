@@ -1,5 +1,2 @@
-# ===== STREAMLIT CLOUD DEPLOYMENT =====
-# Only frontend dependencies needed for the Streamlit app
-
-streamlit==1.36.0
-requests==2.32.3
+streamlit>=1.32.0,<2.0.0
+requests>=2.31.0,<3.0.0
