@@ -1,11 +1,12 @@
 import requests
 import streamlit as st
 import random
+from typing import Optional, Dict, Any, List, Tuple
 
 # =============================
 # CONFIG
 # =============================
-API_BASE = "https://movie-rec-466x.onrender.com" or "http://127.0.0.1:8000"
+API_BASE = "https://movieflix-rec.onrender.com"
 TMDB_IMG = "https://image.tmdb.org/t/p/w500"
 TMDB_BACKDROP = "https://image.tmdb.org/t/p/original"
 
@@ -669,7 +670,7 @@ def goto_details(tmdb_id: int):
 # API HELPERS
 # =============================
 @st.cache_data(ttl=60)
-def api_get_json(path: str, params: dict | None = None):
+def api_get_json(path: str, params: Optional[dict] = None):
     try:
         r = requests.get(f"{API_BASE}{path}", params=params, timeout=25)
         if r.status_code >= 400:
